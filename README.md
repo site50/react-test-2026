@@ -1,4 +1,10 @@
-# React + Vite
+# ChatGPT Web App
+# Front-End React
+# Запустить Front-End командой `npm run dev`
+# http://localhost:5173
+# Автор Богданова Римма
+# https://site50.github.io/NEW_RESUME/Home.html
+# sitebogd15@gmail.com / 8 962-528-21-76
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
