@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import React from 'react';
-
+import { FaMessage } from "react-icons/fa6";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -40,11 +40,13 @@ function App() {
     recognition.onend = () => setListening(false);
 
     recognitionRef.current = recognition;
+    console.log(loading)
   }, []);
 
   const startListening = () => {
     if (recognitionRef.current) {
       setListening(true);
+      setLoading(true);
       recognitionRef.current.start();
     }
   };
@@ -76,30 +78,33 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="text">ChatGPT Web App</h1>
-      <div className="module-row">
-        <input
-          type="text"
-          className=""
-          placeholder="Введите сообщение"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button
-          onClick={startListening}
-                 >
-          {listening ? "Говорите..." : "🎤"}
-        </button>
+      <div className="container-message">
+        <FaMessage style={{ fontSize: '0.8rem', color: '#edf0f9' }} />
       </div>
+      <h2 className="answer"> {loading ? <span style={{ color: `#a4f7a4` }}>
+        <i className="fa fa-spinner fa-spin" ></i>
+      </span> : reply}</h2>
+
+      <h2 className="text">Hi there!</h2>
+      <h1 className="text">What would you like to know?</h1>
+      <p >Use one of the most common promp ts below  </p>
+      <p >or ask your own question  </p>
       <div className="module-row">
-     <div className="reply-box">{reply}</div>
-     <button
-        onClick={sendMessage}
-        className="button-send"
-        disabled={loading}
-      >
-        {loading ? "Идёт обработка..." : "Отправить"}
-      </button>
+
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="Ask whatever you want "
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="input-field"
+          />
+          <i className="fa fa-microphone" onClick={startListening} ></i>
+          <div
+            onClick={sendMessage}
+            className="button-send"
+          ><i className="arrow right"></i></div>
+        </div>
       </div>
     </div>
   );

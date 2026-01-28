@@ -4,13 +4,13 @@
 }
 
 .container {
-  max-width: 600px;
-  margin: 20px auto;
+  margin: 7% 0 0 10%;
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  text-align: center;
+h1,
+h2 {
+  text-align: left;
 }
 
 .module-row {
@@ -22,27 +22,94 @@ h1 {
 
 input[type="text"] {
   flex: 1;
-  padding: 8px;
+  padding: 7px 84px;
   font-size: 16px;
+  border-radius: 13px;
+  height: 34px;
+  border: solid 3px #2a5385;
+  color: #b7c4d3;
+  width: -webkit-fill-available;
+  position: relative;
 }
 
-button {
-  padding: 8px 12px;
-  font-size: 16px;
+input::placeholder {
+  color: #b7c4d3;
+  opacity: 1;
+}
+
+p {
+  color: #b7c4d3;
+}
+
+.button-send {
+  position: absolute;
+  width: 75px;
+  height: 108%;
+  font-size: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff00;
+  right: 0;
+  background: #2a5385;
+  border-radius: 9px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: grid;
   cursor: pointer;
-  background-color: #ff8b8b;
-    width: 50%;
+
 }
 
-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+.input-container {
+  position: absolute;
+  display: inline-block;
+  width: 66%;
 }
 
-.reply-box {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #333;
-  min-height: 50px;
-  white-space: pre-wrap;
+.input-field {
+  padding-right: 30px;
+  height: 30px;
+}
+
+
+.fa-microphone {
+  color: #2a5385;
+  font-size: 32px;
+  position: absolute;
+  left: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.container-message {
+  background-color: #2a5385;
+  display: block;
+  text-align: center;
+  padding: 11px 3px 3px;
+  width: 30px;
+  border-radius: 8px;
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  font-size: 27px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.text {
+  color: white;
+}
+
+.answer {
+  height: 23px;
+  color: #accae5;
+  font-size: 18px;
 }
